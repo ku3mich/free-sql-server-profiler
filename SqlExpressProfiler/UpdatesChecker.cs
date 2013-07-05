@@ -9,7 +9,7 @@ using AnfiniL.SqlExpressProfiler.Properties;
 
 namespace AnfiniL.SqlExpressProfiler
 {
-    static class UpdatesChecker
+    public static class UpdatesChecker
     {
         static readonly Regex VersionRegex = new Regex(@"SqlExpressProfiler-(?<Version>(?<Major>\d+)\.(?<Minor>\d+)\.(?<Build>\d+)\.(?<Revision>\d+))");
 

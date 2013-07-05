@@ -5,11 +5,12 @@ using System.IO;
 using System.Windows.Forms;
 using AnfiniL.SqlExpressProfiler.Properties;
 //using AnjLab.FX.System;
+using AnjLab.FX.Sys;
 using SqlServerTools;
 using SqlServerTools.Data;
 using AnfiniL.SqlServerTools.Data;
 using System.Text;
-using AnjLab.FX.System;
+using AnjLab.FX.Sys;
 
 namespace AnfiniL.SqlExpressProfiler.Logic
 {

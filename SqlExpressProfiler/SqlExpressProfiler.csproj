@@ -60,10 +60,6 @@
     <Reference Include="Accessibility">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="AnjLab.FX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\libs\AnjLab.FX.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AnalysisServices, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Microsoft SQL Server\100\Setup Bootstrap\Release\x86\Microsoft.AnalysisServices.DLL</HintPath>
@@ -87,10 +83,6 @@
       <HintPath>..\libs\Microsoft.SqlServer.SqlEnum.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework, Version=2.2.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\libs\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -100,10 +92,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TabStrip, Version=2.0.2523.29272, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\libs\TabStrip.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\AboutBox.cs">
@@ -237,12 +225,19 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="UnitTests\UpdatesCheckerTests.cs" />
     <Compile Include="UpdatesChecker.cs" />
     <Compile Include="VisualStyles\DefaultColorTable.cs" />
     <Compile Include="VisualStyles\VisualStyleUtils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\libs\fx\AnjLab.FX\AnjLab.FX.csproj">
+      <Project>{9cea924b-d8f0-4d5a-bacb-878d3d12c5f3}</Project>
+      <Name>AnjLab.FX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\TabStrips\TabStrip\TabStrip.csproj">
+      <Project>{f929ca6a-87bd-42c8-8d0a-6455db6f55dc}</Project>
+      <Name>TabStrip</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SqlServerTools\SqlServerTools.csproj">
       <Project>{E4D68A3B-E966-4ECE-A39F-834342826A75}</Project>
       <Name>SqlServerTools</Name>
@@ -296,14 +291,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <UsingTask TaskName="ProductInfo" AssemblyFile="$(MSBuildProjectDirectory)\..\libs\AnjLab.FX.MSBuild.Tasks.dll" />
-  <UsingTask TaskName="ArchiveFolder" AssemblyFile="$(MSBuildProjectDirectory)\..\libs\AnjLab.FX.MSBuild.Tasks.dll" />
+  <!--<UsingTask TaskName="ProductInfo" AssemblyFile="$(MSBuildProjectDirectory)\..\libs\AnjLab.FX.MSBuild.Tasks.dll" />
+  <UsingTask TaskName="ArchiveFolder" AssemblyFile="$(MSBuildProjectDirectory)\..\libs\AnjLab.FX.MSBuild.Tasks.dll" />-->
   <Target Name="BeforeBuild">
-    <ProductInfo InfoFile="$(MSBuildProjectDirectory)\..\ProductInfo.xml" OutputFile="$(MSBuildProjectDirectory)\Properties\AssemblyGeneratedInfo.cs">
+    <!--<ProductInfo InfoFile="$(MSBuildProjectDirectory)\..\ProductInfo.xml" OutputFile="$(MSBuildProjectDirectory)\Properties\AssemblyGeneratedInfo.cs">
       <Output TaskParameter="Version" PropertyName="FullVersion" />
-    </ProductInfo>
+    </ProductInfo>-->
   </Target>
   <Target Name="AfterBuild">
-    <ArchiveFolder Condition=" '$(Configuration)' == 'Release' " PathToArchive="$(OutDir)" ArchiveName="SqlExpressProfiler-$(FullVersion).zip" Exclude="SqlExpressProfiler-*.ZIP;*.vshost.exe;*.pdb" />
+    <!--<ArchiveFolder Condition=" '$(Configuration)' == 'Release' " PathToArchive="$(OutDir)" ArchiveName="SqlExpressProfiler-$(FullVersion).zip" Exclude="SqlExpressProfiler-*.ZIP;*.vshost.exe;*.pdb" />-->
   </Target>
 </Project>

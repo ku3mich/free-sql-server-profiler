@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 //using AnfiniL.FX.System;
+using AnjLab.FX.Sys;
 using SqlServerTools.Data;
 using AnfiniL.SqlExpressProfiler.Logic;
-using AnjLab.FX.System;
 
 namespace AnfiniL.SqlExpressProfiler.Controls
 {

@@ -36,7 +36,7 @@ namespace AnfiniL.SqlExpressProfiler.Controls
                 TraceField[] definedFields = (TraceField[])Enum.GetValues(typeof(TraceField));
                 foreach (TraceField field in Enum.GetValues(typeof(TraceField)))
                 {
-                    foreach (AnjLab.FX.System.Pair<int,int> pair in TraceManager.GetUserTraceEvents())
+                    foreach (AnjLab.FX.Sys.Pair<int,int> pair in TraceManager.GetUserTraceEvents())
                     {
                         string userEvent = definedFields[pair.B - 2].ToString();
                         if (field.ToString() == userEvent)
