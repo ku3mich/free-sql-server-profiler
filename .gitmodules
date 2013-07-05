@@ -1,8 +1,8 @@
 [submodule "fx"]
 path = libs/fx
-url = git@github.com:ku3mich/fx 
+url = https://github.com/ku3mich/fx 
 
 [submodule "TabStrips"]
 path = libs/TabStrips
-url = git@github.com:ku3mich/TabStrips
+url = https://github.com/ku3mich/TabStrips
  
