@@ -1,21 +1,17 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Data;
 
 namespace SqlServerTools.Data
 {
     public class TraceEventArgs : EventArgs
     {
-        private DataTable eventsTable;
+        private readonly DataTable eventsTable;
 
         public TraceEventArgs()
-            : base()
         {
         }
 
         public TraceEventArgs(DataTable eventsTable)
-            : base()
         {
             this.eventsTable = eventsTable;
         }
